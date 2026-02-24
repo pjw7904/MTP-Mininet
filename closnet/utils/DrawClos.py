@@ -151,10 +151,12 @@ def drawFoldedClos(
         nx.draw_networkx_nodes(topology, pos, node_color=tier_colors,
                                cmap=plt.cm.viridis, node_size=850)
         nx.draw_networkx_labels(topology, pos, font_size=8, font_color="white")
-        plt.title("Folded‑Clos Topology (pristine)")
+        #plt.title("Folded‑Clos Topology (pristine)")
         plt.axis("off")
         plt.tight_layout()
         plt.show()
+        print(f"[Pristine] Nodes: {topology.number_of_nodes()}  "
+              f"Links: {topology.number_of_edges()}")
 
     # ---------- optional failure view -------------------------------------------
     if failed_link is None:
@@ -200,7 +202,7 @@ def drawFoldedClos(
                            edgecolors="black", node_size=850, linewidths=1.1)
     nx.draw_networkx_labels(topo_failed, pos_f, font_size=8, font_weight="bold")
 
-    plt.title("After failure: reachability & blast radius")
+    #plt.title("After failure: reachability & blast radius")
     plt.axis("off")
     plt.tight_layout()
     plt.show()
